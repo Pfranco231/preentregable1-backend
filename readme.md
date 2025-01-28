@@ -35,12 +35,12 @@
 #### Obtener un Producto por ID
 
 - **Método**: GET
-- **URL**: `http://localhost:8080/api/products/:pid`
+- **URL**: `http://localhost:8080/api/products/{id}`
 
 #### Actualizar un Producto
 
 - **Método**: PUT
-- **URL**: `http://localhost:8080/api/products/:pid`
+- **URL**: `http://localhost:8080/api/products/{id}`
 - **Cuerpo** (JSON):
   ```json
   {
@@ -52,7 +52,7 @@
 #### Eliminar un Producto
 
 - **Método**: DELETE
-- **URL**: `http://localhost:8080/api/products/:pid`
+- **URL**: `http://localhost:8080/api/products/{id}`
 
 ### Carritos
 
@@ -64,17 +64,17 @@
 #### Obtener un Carrito por ID
 
 - **Método**: GET
-- **URL**: `http://localhost:8080/api/carts/:cid`
+- **URL**: `http://localhost:8080/api/carts/{id}`
 
 #### Añadir un Producto a un Carrito
 
 - **Método**: POST
-- **URL**: `http://localhost:8080/api/carts/:cid/product/:pid`
+- **URL**: `http://localhost:8080/api/carts/{id}/product/{id}`
 
 #### Eliminar un Carrito
 
 - **Método**: DELETE
-- **URL**: `http://localhost:8080/api/carts/:cid`
+- **URL**: `http://localhost:8080/api/carts/{id}`
 
 ## Notas
 
@@ -89,4 +89,4 @@ carts.json
  existan y estén inicializados como arreglos vacíos.
 - Usa Postman para enviar las solicitudes HTTP a los endpoints de la API.
 
-¡Disfruta usando la API!
+2025 | Franco Papeschi
