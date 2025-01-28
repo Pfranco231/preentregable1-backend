@@ -1,17 +1,38 @@
 [
   {
-    "name": "Producto 1",
-    "price": 100,
+    "title": "Ramera Amarilla",
+    "description": "Remera comun con color Amarillo",
+    "price": 150,
+    "status": true,
+    "stock": 25,
+    "thumbnails": [
+      "./src/imgs/remeras/remera-amarilla.png",
+      "./src/imgs/remeras/remera-amarilla2.png"
+    ],
     "id": 1
   },
   {
-    "name": "Producto 2",
-    "price": 333,
+    "title": "zapatillas nike",
+    "description": "zapatillas nike muy buen estado",
+    "price": 260,
+    "status": true,
+    "stock": 5,
+    "thumbnails": [
+      "./src/imgs/zapatillas/nikes/zapas-nike.png",
+      "./src/imgs/zapatillas/nikes/zapas-nike2.png"
+    ],
     "id": 2
   },
   {
-    "name": "Producto 3",
-    "price": 999,
+    "title": "Gorra",
+    "description": "Gorra negra con logotipo",
+    "price": 15,
+    "status": true,
+    "stock": 70,
+    "thumbnails": [
+      "./src/imgs/gorras/gorra-negra.png",
+      "./src/imgs/gorras/gorra-negra.png"
+    ],
     "id": 3
   }
 ]

@@ -31,7 +31,15 @@ class ProductManager {
         return products.find(product => product.id === id);
     }
 
+    validateProduct(product) {
+        const { title, description, price, status, stock, thumbnails } = product;
+        if (typeof title !== 'string' || typeof description !== 'string' || typeof price !== 'number' || typeof status !== 'boolean' || typeof stock !== 'number' || !Array.isArray(thumbnails) || !thumbnails.every(thumbnail => typeof thumbnail === 'string')) {
+            throw new Error('Producto invalido');
+        }
+    }
+
     addProduct(product) {
+        this.validateProduct(product);
         const products = this.getAllProducts();
         product.id = products.length ? products[products.length - 1].id + 1 : 1;
         products.push(product);
@@ -40,6 +48,7 @@ class ProductManager {
     }
 
     updateProduct(id, updatedProduct) {
+        this.validateProduct(updatedProduct);
         const products = this.getAllProducts();
         const index = products.findIndex(product => product.id === id);
         if (index !== -1) {
@@ -113,16 +122,24 @@ app.get('/api/products/:pid', (req, res) => {
 });
 
 app.post('/api/products', (req, res) => {
-    const newProduct = productManager.addProduct(req.body);
-    res.status(201).json(newProduct);
+    try {
+        const newProduct = productManager.addProduct(req.body);
+        res.status(201).json(newProduct);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
 });
 
 app.put('/api/products/:pid', (req, res) => {
-    const updatedProduct = productManager.updateProduct(parseInt(req.params.pid), req.body);
-    if (updatedProduct) {
-        res.json(updatedProduct);
-    } else {
-        res.status(404).send('Producto no encontrado');
+    try {
+        const updatedProduct = productManager.updateProduct(parseInt(req.params.pid), req.body);
+        if (updatedProduct) {
+            res.json(updatedProduct);
+        } else {
+            res.status(404).send('Producto no encontrado');
+        }
+    } catch (error) {
+        res.status(400).send(error.message);
     }
 });
 
@@ -159,4 +176,3 @@ app.listen(port, () => {
     console.log(`El servidor va a responder con GET -- POST -- PUT -- DELETE`);
     console.log(`Servidor listo para usarse.`);
 });
-

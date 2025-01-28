@@ -22,8 +22,12 @@
 - **Cuerpo** (JSON):
   ```json
   {
-    "name": "Nombre del Producto",
-    "price": 100
+    "title": "Nombre del Producto",
+    "description": "Descripción del Producto",
+    "price": 100,
+    "status": true,
+    "stock": 50,
+    "thumbnails": ["url1", "url2"]
   }
   ```
 
@@ -44,8 +48,12 @@
 - **Cuerpo** (JSON):
   ```json
   {
-    "name": "Nombre Actualizado",
-    "price": 150
+    "title": "Nombre Actualizado",
+    "description": "Descripción Actualizada",
+    "price": 150,
+    "status": false,
+    "stock": 30,
+    "thumbnails": ["url3", "url4"]
   }
   ```
 
@@ -69,7 +77,7 @@
 #### Añadir un Producto a un Carrito
 
 - **Método**: POST
-- **URL**: `http://localhost:8080/api/carts/{id}/product/{id}`
+- **URL**: `http://localhost:8080/api/carts/{cid}/product/{pid}`
 
 #### Eliminar un Carrito
 
