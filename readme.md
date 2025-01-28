@@ -1,0 +1,92 @@
+### README
+
+# API de Productos y Carritos
+
+## Uso
+
+1. Inicia el servidor:
+   ```bash
+   node main.js
+   ```
+
+2. El servidor estará disponible en `http://localhost:8080`.
+
+## Endpoints
+
+### Productos
+
+#### Crear un Producto
+
+- **Método**: POST
+- **URL**: `http://localhost:8080/api/products`
+- **Cuerpo** (JSON):
+  ```json
+  {
+    "name": "Nombre del Producto",
+    "price": 100
+  }
+  ```
+
+#### Obtener Todos los Productos
+
+- **Método**: GET
+- **URL**: `http://localhost:8080/api/products`
+
+#### Obtener un Producto por ID
+
+- **Método**: GET
+- **URL**: `http://localhost:8080/api/products/:pid`
+
+#### Actualizar un Producto
+
+- **Método**: PUT
+- **URL**: `http://localhost:8080/api/products/:pid`
+- **Cuerpo** (JSON):
+  ```json
+  {
+    "name": "Nombre Actualizado",
+    "price": 150
+  }
+  ```
+
+#### Eliminar un Producto
+
+- **Método**: DELETE
+- **URL**: `http://localhost:8080/api/products/:pid`
+
+### Carritos
+
+#### Crear un Carrito
+
+- **Método**: POST
+- **URL**: `http://localhost:8080/api/carts`
+
+#### Obtener un Carrito por ID
+
+- **Método**: GET
+- **URL**: `http://localhost:8080/api/carts/:cid`
+
+#### Añadir un Producto a un Carrito
+
+- **Método**: POST
+- **URL**: `http://localhost:8080/api/carts/:cid/product/:pid`
+
+#### Eliminar un Carrito
+
+- **Método**: DELETE
+- **URL**: `http://localhost:8080/api/carts/:cid`
+
+## Notas
+
+- Asegúrate de que los archivos 
+
+products.json
+
+ y 
+
+carts.json
+
+ existan y estén inicializados como arreglos vacíos.
+- Usa Postman para enviar las solicitudes HTTP a los endpoints de la API.
+
+¡Disfruta usando la API!

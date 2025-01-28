@@ -1,0 +1,14 @@
+{
+  "name": "preentregable",
+  "version": "0.0.1",
+  "description": "Primera Preentrega de coderhouse ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Franco Papeschi (Pfranco231 github account)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
