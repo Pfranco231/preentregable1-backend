@@ -77,7 +77,7 @@
 #### Añadir un Producto a un Carrito
 
 - **Método**: POST
-- **URL**: `http://localhost:8080/api/carts/{cid}/product/{pid}`
+- **URL**: `http://localhost:8080/api/carts/{id}/product/{id}`
 
 #### Eliminar un Carrito
 
